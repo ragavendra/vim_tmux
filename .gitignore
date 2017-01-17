@@ -1,0 +1,7 @@
+/*
+!/foo
+/foo/*
+!/foo/bar
+!.tmux.conf
+!.vimrc
+!.gitignore
