@@ -1,11 +1,4 @@
-
-5) Install pathogen like below
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-
-
-# vim_tmux
+## vim_tmux
 Repo to maintain my vim and tmux settings
 
 ### A. For vim
@@ -19,7 +12,6 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim`
 
 #### 3. Install vim plugins
 `vim .vimrc`
-
 `:PluginInstall`
 
 ### B. For tmux
