@@ -3,7 +3,7 @@ Repo to maintain my vim and tmux settings
 
 ### A. For vim
 #### 1. Copy .vimrc and .tmux.conf files to ~ dir
-`$cd ~ && git clone https://github.com/ragavendra/vim_tmux && cp vim_tmux.* .`
+`$cd ~ && git clone https://github.com/ragavendra/vim_tmux && cp vim_tmux/{.tmux.conf,.vimrc} .`
 
 
 #### 2. Install pathogen
