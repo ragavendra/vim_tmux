@@ -17,10 +17,10 @@ Repo to maintain my vim and tmux settings
 
 ### B. For tmux
 #### 1. Install Plugin Manager
-`$ git clone https://github.com/tmux-plugins/tmux-resurrect ~/clone/path`
+`$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 
 #### 2.  Exit tmux and Reload TMUX environment with: 
-`$ tmux source-file ~/.tmux.conf`
+`$ tmux source ~/.tmux.conf`
 
 
 #### 3. Install plugins in the conf file
