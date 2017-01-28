@@ -5,11 +5,13 @@ Repo to maintain my vim and tmux settings
 #### 1. Copy .vimrc and .tmux.conf files to ~ dir
 `$cd ~ && git clone https://github.com/ragavendra/vim_tmux && cp vim_tmux/{.tmux.conf,.vimrc} .`
 
+#### 2. Install vundle
+`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
-#### 2. Install pathogen
+#### 3. Install pathogen
 `mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim`
 
-#### 3. Install vim plugins
+#### 4. Install vim plugins
 `vim .vimrc`
 `:PluginInstall`
 
