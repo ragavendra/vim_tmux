@@ -25,4 +25,4 @@ Repo to maintain my vim and tmux settings
 
 #### 3. Install plugins in the conf file
 `$ tmux`
-`Prefix [Ctrl + b] plus [Ctrl + I]`
+`Prefix [Ctrl + b] and [Shift + i]`
