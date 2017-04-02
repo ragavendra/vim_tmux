@@ -8,6 +8,10 @@ call vundle#begin()
 
 Bundle 'skalnik/vim-vroom'
 
+" In some systems the trees arrow doesn't work properly, uncomment below
+" let g:NERDTreeDirArrowExpandable = '>'
+" let g:NERDTreeDirArrowCollapsible = 'v'
+
 if &term =~ '^screen'
 	" tmux will send xterm-style keys when its xterm-keys option is on
 	execute "set <xUp>=\e[1;*A"
