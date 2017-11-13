@@ -72,8 +72,10 @@ filetype plugin on    " Enable filetype-specific plugins
 set completefunc=syntaxcomplete#Complete
 autocmd VimEnter * NERDTree
 
+" solarized theme enable
 set background=dark
-" colorscheme solarized
+colorscheme solarized
+
 autocmd VimEnter * wincmd p
 execute pathogen#infect()
 map <F9> :w<CR>:!ruby -c %<CR>
