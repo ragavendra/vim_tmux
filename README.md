@@ -2,8 +2,8 @@
 Repo to maintain my vim and tmux settings
 
 ### A. For vim
-#### 1. Copy .vimrc and .tmux.conf files to ~ dir
-`$cd ~ && git clone https://github.com/ragavendra/vim_tmux && cp vim_tmux/{.tmux.conf,.vimrc} .`
+#### 1. Copy .vimrc .tmux.conf files and .vim dir to ~
+`git clone https://github.com/ragavendra/vim_tmux && cp vim_tmux/{.tmux.conf,.vimrc, .vim} ~`
 
 #### 2. Install vundle
 `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
@@ -21,7 +21,6 @@ Repo to maintain my vim and tmux settings
 
 #### 2.  Exit tmux and Reload TMUX environment with: 
 `$ tmux source ~/.tmux.conf`
-
 
 #### 3. Install plugins in the conf file
 `$ tmux`
