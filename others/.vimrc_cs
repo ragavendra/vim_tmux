@@ -1,55 +1,62 @@
 " Set this to 1 to use ultisnips for snippet handling
 let s:using_snippets = 0
 
-" vim-plug: {{{
-call plug#begin('~/.vim/plugged')
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 
-Plug 'OmniSharp/omnisharp-vim'
+" vundle: {{{
+call vundle#begin()
+
+Bundle 'skalnik/vim-vroom'
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'christoomey/vim-tmux-navigator'
+
+" vimpector
+Plugin 'puremourning/vimspector'
+
+" omnisharp
+Plugin 'OmniSharp/omnisharp-vim'
 
 " Mappings, code-actions available flag and statusline integration
-Plug 'nickspoons/vim-sharpenup'
+Plugin 'nickspoons/vim-sharpenup'
 
 " Linting/error highlighting
-Plug 'dense-analysis/ale'
-
-" Vim FZF integration, used as OmniSharp selector
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plugin 'dense-analysis/ale'
 
 " Autocompletion
-Plug 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete.vim'
 
 " Colorscheme
-Plug 'gruvbox-community/gruvbox'
+Plugin 'gruvbox-community/gruvbox'
 
 " Statusline
-Plug 'itchyny/lightline.vim'
-Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'maximbaz/lightline-ale'
+Plugin 'itchyny/lightline.vim'
+Plugin 'shinchu/lightline-gruvbox.vim'
+Plugin 'maximbaz/lightline-ale'
 
 " Snippet support
 if s:using_snippets
-  Plug 'sirver/ultisnips'
+  Plugin 'sirver/ultisnips'
 endif
 
-call plug#end()
+call vundle#end()            " required
 " }}}
 
-" for vim8.0+ 
-let g:OmniSharp_server_stdio = 1
-let g:OmniSharp_server_use_net6 = 1
+" vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
 
-" let g:OmniSharp_popup = 1
-" let g:OmniSharp_selector_ui = ''    " Use fzf
-" let g:OmniSharp_selector_findusages = 'fzf'
-" let g:OmniSharp_popup_mappings.close = '<Esc>'
+" for vim8.0+ 
+let g:OmniSharp_server_use_net6 = 1
 
 " Settings: {{{
 filetype indent plugin on
 if !exists('g:syntax_on') | syntax enable | endif
 set encoding=utf-8
 scriptencoding utf-8
-
 
 set completeopt=menuone,noinsert,noselect,popuphidden
 set completepopup=highlight:Pmenu,border:off
@@ -95,9 +102,9 @@ augroup ColorschemePreferences
 augroup END
 
 " Use truecolor in the terminal, when it is supported
-if has('termguicolors')
-  set termguicolors
-endif
+" if has('termguicolors')
+"  set termguicolors
+" endif
 
 " set background=dark
 " colorscheme gruvbox
@@ -203,3 +210,14 @@ let g:OmniSharp_highlight_groups = {
 \ 'ExcludedCode': 'NonText'
 \}
 " }}}
+
+" Vundle
+autocmd VimEnter * wincmd p
+execute pathogen#infect()
+
+" Nerdtree
+autocmd VimEnter * if !argc() | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
