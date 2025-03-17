@@ -1,0 +1,27 @@
+" autocmd works only on vim reboot
+nnoremap <buffer> \e gg<CR>
+nnoremap <esc> :noh<return><esc>
+
+" C lang custom keys
+nnoremap <buffer> \r :w <CR> :!gcc % -o %< && ./%< <CR>
+nnoremap <buffer> \cc :w <CR> :!gcc % -Wall %< <CR>
+nnoremap <buffer> \i gg ^ i#include <
+nnoremap <buffer> \d i#define
+nnoremap <buffer> \c ^i//<Space><Esc>
+nnoremap <buffer> \uc ^xxx<Space><Esc>
+nnoremap  <buffer> \bc ^i/* */<Esc>hhi<Space>
+
+" insert mode
+noremap! <buffer> \c //<Space> 
+noremap! <buffer> \bc /*  */<Left><Left><Left>
+noremap! <buffer> \i i#include <
+" smap \c :s/^/\/\//<CR>
+" vmap \bc ^i/* */<Esc>hhi<Space>
+
+" visual mode
+vnoremap <buffer> \c :s/^/\/\//<CR>:noh<CR>
+" vmap \uc :s/^\/\//<CR>
+vnoremap <buffer> \uc :s/\/\/[?<Space>?<Tab>]/<CR>
+" '<,'>s/^/\/*/g - block comment
+
+

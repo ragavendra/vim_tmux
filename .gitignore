@@ -1,8 +1,0 @@
-/*
-!/foo
-/foo/*
-!/foo/bar
-!.tmux.conf
-!.vimrc
-!.vim
-!.gitignore
